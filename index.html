@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0e1a">
+  <meta name="background-color" content="#0a0e1a">
+  <meta name="description" content="Интерактивное руководство по космическим звуковым программам и мантрам от Космической Станции">
+  <meta name="keywords" content="космические звуки, мантры, звуковые программы, энергия, медитация">
+  <meta name="author" content="Космическая Станция">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Звуки Космоса">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Космическая Станция — Звуки Космоса">
+  <meta property="og:description" content="Интерактивное руководство по космическим звуковым программам">
+  <meta property="og:image" content="images/hero-bg.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Космическая Станция — Звуки Космоса">
+  <meta name="twitter:description" content="Интерактивное руководство по космическим звуковым программам">
+  <meta name="twitter:image" content="images/hero-bg.jpg">
+
+  <title>Космическая Станция — Звуки Космоса</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.svg">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Animated Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-text">КОСМИЧЕСКАЯ СТАНЦИЯ</div>
+      <div class="subtitle">ЗВУКИ КОСМОСА</div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <nav class="nav-tabs" id="topTabs" role="tablist">
+      <button class="nav-tab active" onclick="switchTab('programs')" role="tab" aria-selected="true">Программы</button>
+      <button class="nav-tab" onclick="switchTab('guide')" role="tab" aria-selected="false">Гид</button>
+      <button class="nav-tab" onclick="switchTab('practice')" role="tab" aria-selected="false">Практика</button>
+      <button class="nav-tab" onclick="switchTab('numbers')" role="tab" aria-selected="false">Числа</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+
+      <!-- ===== PROGRAMS SECTION ===== -->
+      <section class="section active" id="programs" role="tabpanel">
+        <div class="hero-card">
+          <div class="hero-title">✨ Космические Звуки</div>
+          <div class="hero-desc">
+            Все звуки выданы космическими цивилизациями. Каждая программа содержит 
+            уникальный код звучания для активации энергий. Выберите программу по категории 
+            или изучите все сразу.
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-filter" id="categoryFilter">
+          <button class="category-chip active" data-category="all" onclick="filterCategory('all')">✨ Все</button>
+          <button class="category-chip" data-category="жизненная-энергия" onclick="filterCategory('жизненная-энергия')">🌟 Энергия</button>
+          <button class="category-chip" data-category="сила-мощь" onclick="filterCategory('сила-мощь')">⚡ Сила</button>
+          <button class="category-chip" data-category="гармония" onclick="filterCategory('гармония')">🌀 Гармония</button>
+          <button class="category-chip" data-category="результаты" onclick="filterCategory('результаты')">🎯 Результаты</button>
+          <button class="category-chip" data-category="перезагрузка" onclick="filterCategory('перезагрузка')">🔄 Перезагрузка</button>
+          <button class="category-chip" data-category="тело-обновление" onclick="filterCategory('тело-обновление')">💧 Тело</button>
+          <button class="category-chip" data-category="гармония-радость" onclick="filterCategory('гармония-радость')">🌈 Радость</button>
+          <button class="category-chip" data-category="вибрации" onclick="filterCategory('вибрации')">✨ Вибрации</button>
+        </div>
+
+        <!-- Floating Orbs Visual -->
+        <div class="orb-container" aria-hidden="true">
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+        </div>
+
+        <!-- Sound Programs Grid -->
+        <div class="sound-grid" id="soundGrid"></div>
+      </section>
+
+      <!-- ===== GUIDE SECTION ===== -->
+      <section class="section" id="guide" role="tabpanel">
+        <div class="hero-card">
+          <div class="hero-title">📖 Как Практиковать</div>
+          <div class="hero-desc">
+            Для качественного результата можно выбрать <strong>3, 7, 12, 21 или 33 подхода</strong>. 
+            Следуйте рекомендациям к каждой программе. Если информация отсутствует — 
+            делайте по своему чувствованию.
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>🎯 Энергия Чисел</h3>
+          <p style="margin-bottom:12px; color:var(--text-muted);">Можно пойти от цифры и той энергии, которую она несёт:</p>
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-teal); min-width:24px;">1</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Помогает укрепить имеющийся фундамент, активизирует материализацию</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-purple); min-width:24px;">2</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Выводит в новые состояния и энергии</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-pink); min-width:24px;">3</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Выводит в качество и удовольствие</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-gold); min-width:24px;">4</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Активизирует энергии любви, нежности, душевной теплоты</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-teal); min-width:24px;">5</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Помогает собраться, выводит в ресурсное состояние, силу и мощь</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-purple); min-width:24px;">6</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Выводит в гармоничные состояния</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-pink); min-width:24px;">7</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Активирует абсолютно новые программы и возможности</span>
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid var(--glass-border); display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-gold); min-width:24px;">8</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Активизирует энергию делать, созидать, выводит в качественную скорость</span>
+            </li>
+            <li style="padding:10px 0; display:flex; gap:12px; align-items:flex-start;">
+              <span style="font-family:var(--font-display); font-size:20px; color:var(--cosmic-teal); min-width:24px;">9</span>
+              <span style="font-size:14px; color:var(--text-secondary);">Помогает завершить то, что пора завершить, обновиться и выйти на другой уровень</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>🔊 Общие Рекомендации</h3>
+          <p>
+            Если информация о технике звучания отсутствует — делайте по своему чувствованию. 
+            Звучите, выстраивая свой ритм. Постепенно увеличивайте скорость. 
+            При сбивании со счёта начинайте заново.
+          </p>
+          <div class="highlight-box" style="margin-top:16px;">
+            <p style="margin:0; font-size:13px; color:var(--cosmic-teal);">
+              💡 <strong>Совет:</strong> Некоторые программы рекомендуется звучать на воду 
+              (до 1,5 л в день) и выпивать её — это усиливает эффект.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>🌌 О Звуках Космоса</h3>
+          <p>
+            Все звуки выданы космическими цивилизациями. В рекомендациях к каждой программе 
+            указана техника звучания и количество необходимых подходов. Каждый звук несёт 
+            уникальную вибрационную программу, направленную на гармонизацию, обновление 
+            и активацию скрытых возможностей.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== PRACTICE SECTION ===== -->
+      <section class="section" id="practice" role="tabpanel">
+        <div class="hero-card">
+          <div class="hero-title">🧘 Практика Счёта</div>
+          <div class="hero-desc">
+            Используйте счётчик для отсчёта повторений. Нажимайте на кнопку или используйте 
+            пробел/Enter. Если сбились — начните заново.
+          </div>
+        </div>
+
+        <div class="practice-counter">
+          <div class="counter-goal">Цель: 108 повторений</div>
+          <div class="counter-display" id="counterDisplay">0</div>
+          <div class="counter-total">/ 108</div>
+
+          <!-- Progress Ring -->
+          <div class="progress-ring-container">
+            <svg class="progress-ring" width="140" height="140" viewBox="0 0 140 140">
+              <defs>
+                <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00d4c8"/>
+                  <stop offset="100%" stop-color="#c084fc"/>
+                </linearGradient>
+              </defs>
+              <circle class="bg" cx="70" cy="70" r="58"/>
+              <circle class="progress" id="progressCircle" cx="70" cy="70" r="58" 
+                      stroke-dasharray="364.42" stroke-dashoffset="364.42"/>
+            </svg>
+            <div class="progress-percent" id="progressPercent">0%</div>
+          </div>
+
+          <button class="counter-btn" id="counterBtn" onclick="incrementCounter()" aria-label="Увеличить счётчик">
+            ТАП
+          </button>
+
+          <div class="goal-buttons">
+            <button class="goal-btn active" data-goal="108" onclick="setGoal(108)">108</button>
+            <button class="goal-btn" data-goal="33" onclick="setGoal(33)">33</button>
+            <button class="goal-btn" data-goal="21" onclick="setGoal(21)">21</button>
+            <button class="goal-btn" data-goal="12" onclick="setGoal(12)">12</button>
+            <button class="goal-btn" data-goal="7" onclick="setGoal(7)">7</button>
+            <button class="goal-btn" data-goal="3" onclick="setGoal(3)">3</button>
+          </div>
+
+          <button class="reset-btn" onclick="resetCounter()">↺ Сбросить счётчик</button>
+        </div>
+      </section>
+
+      <!-- ===== NUMBERS SECTION ===== -->
+      <section class="section" id="numbers" role="tabpanel">
+        <div class="hero-card">
+          <div class="hero-title">🔢 Сила Чисел</div>
+          <div class="hero-desc">
+            Каждое число несёт уникальную энергию. Выбирайте количество подходов осознанно, 
+            исходя из желаемого результата.
+          </div>
+        </div>
+
+        <div class="number-grid" id="numberGrid"></div>
+
+        <div class="info-card" style="margin-top:20px;">
+          <h3>📐 Рекомендуемые Подходы</h3>
+          <p style="margin-bottom:16px;">Для качественного результата используйте:</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <span class="meta-tag" style="font-size:14px; padding:10px 18px;">3 подхода</span>
+            <span class="meta-tag" style="font-size:14px; padding:10px 18px;">7 подходов</span>
+            <span class="meta-tag" style="font-size:14px; padding:10px 18px;">12 подходов</span>
+            <span class="meta-tag" style="font-size:14px; padding:10px 18px;">21 подход</span>
+            <span class="meta-tag" style="font-size:14px; padding:10px 18px;">33 подхода</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== DETAIL VIEW (Modal) ===== -->
+    <div class="detail-view" id="detailView" role="dialog" aria-modal="true" aria-label="Детали программы">
+      <button class="detail-close" onclick="closeDetail()" aria-label="Закрыть">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="detail-content" id="detailContent"></div>
+    </div>
+
+    <!-- ===== INSTALL PROMPT ===== -->
+    <div class="install-prompt" id="installPrompt">
+      <div class="install-card">
+        <div class="install-icon">🚀</div>
+        <div class="install-title">Установить Приложение</div>
+        <div class="install-desc">
+          Добавьте «Звуки Космоса» на главный экран для быстрого доступа к практикам 
+          даже без интернета.
+        </div>
+        <button class="install-btn" onclick="installApp()">Установить</button>
+        <button class="install-btn install-close" onclick="hideInstallPrompt()">Позже</button>
+      </div>
+    </div>
+
+    <!-- ===== BOTTOM NAVIGATION ===== -->
+    <nav class="bottom-nav" role="navigation" aria-label="Главное меню">
+      <button class="bottom-nav-item active" onclick="switchMainTab('programs')" aria-label="Программы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Главная</span>
+      </button>
+      <button class="bottom-nav-item" onclick="switchMainTab('guide')" aria-label="Руководство">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4M12 8h.01"/>
+        </svg>
+        <span>Гид</span>
+      </button>
+      <button class="bottom-nav-item" onclick="switchMainTab('practice')" aria-label="Практика">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span>Практика</span>
+      </button>
+      <button class="bottom-nav-item" onclick="switchMainTab('numbers')" aria-label="Числа">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+        </svg>
+        <span>Числа</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
