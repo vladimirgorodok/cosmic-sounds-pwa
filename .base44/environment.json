@@ -1,0 +1,6 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/cosmic-sounds-pwa/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": []
+}
