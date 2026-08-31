@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
